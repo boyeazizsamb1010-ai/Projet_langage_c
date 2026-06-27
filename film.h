@@ -19,14 +19,14 @@ typedef struct {
 
 /* =========================================================
  * SECTION 2 – GESTION DU FICHIER CSV
- * Responsable : Ahmadoul Khadim GUEYE
+ * Responsable : Ahmadoul Khadim GUEYE et Abdou Aziz SAMB
  * ========================================================= */
 
 /*
  * chargerFilms : lit le fichier CSV et charge les films en mémoire.
  * - nomFichier : chemin vers le fichier CSV
  * - nbFilms    : pointeur mis à jour avec le nombre de films lus
- * Retourne un tableau alloué dynamiquement (à libérer après usage),
+ * Retourne un tableau alloué dynamiquement de Film,
  * ou NULL si le fichier est vide ou inexistant.
  */
 Film* chargerFilms(const char *nomFichier, int *nbFilms);
@@ -42,6 +42,7 @@ void sauvegarderFilms(const char *nomFichier, Film *films, int nbFilms);
 
 /* =========================================================
  * SECTION 3 – FONCTIONNALITÉS OBLIGATOIRES
+*  Responsable : Ahmadoul Khadim GUEYE et Abdou Aziz SAMB
  * ========================================================= */
 
 /*
@@ -91,6 +92,7 @@ void supprimerFilm(const char *nomFichier, int id);
 
 /* =========================================================
  * SECTION 4 – FONCTIONNALITÉS BONUS
+*  Responsable : Ahmadoul Khadim GUEYE et Abdou Aziz SAMB
  * ========================================================= */
 
 /*

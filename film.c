@@ -5,6 +5,16 @@
 
 #include "film.h"
 
+/* =========================================================
+ * SECTION 1 — GESTION DU FICHIER CSV fais ensemble par 
+    Ahmadoul Khadimou GUEYE et Abdou Aziz SAMB
+ * ========================================================= */
+
+/*
+ * chargerFilms
+ * Lit le fichier CSV et retourne un tableau de Film alloué dynamiquement.
+ * *nbFilms est mis à jour avec le nombre de films lus.
+ */
 
 Film* chargerFilms(const char *nomFichier, int *nbFilms) 
 {
@@ -36,11 +46,10 @@ Film* chargerFilms(const char *nomFichier, int *nbFilms)
         return NULL; /* fichier vide */
     }
 
-    /* --- Étape 3 : allouer le tableau dynamiquement --- */
+    /* allouer le tableau dynamiquement*/
     Film *films = malloc(compte * sizeof(Film));
     if (films == NULL) 
     {
-        /* malloc a échoué : pas assez de mémoire */
         fprintf(stderr, "Erreur : allocation mémoire impossible.\n");
         fclose(f);
         return NULL;
@@ -53,7 +62,7 @@ Film* chargerFilms(const char *nomFichier, int *nbFilms)
         if (strlen(ligne) <= 1) continue; /* ignorer les lignes vides */
 
         
-        sscanf(ligne, "%d;%99[^;];%49[^;];%d;%f",
+        sscanf(ligne, "%d;%99[^;];%49[^;];%d;%f", /*Ceci nous permet de lire les données du fichier CSV */
                &films[i].id,
                films[i].titre,
                films[i].genre,
@@ -76,7 +85,8 @@ Film* chargerFilms(const char *nomFichier, int *nbFilms)
  */
 void sauvegarderFilms(const char *nomFichier, Film *films, int nbFilms) {
 
-    /* mode "w" : ouvre le fichier et efface son contenu existant */
+    /* mode "w" : ouvre le fichier et efface son contenu existant 
+    source string.h*/
     FILE *f = fopen(nomFichier, "w");
     if (f == NULL) {
         fprintf(stderr, "Erreur : impossible d'ouvrir %s en écriture.\n", nomFichier);
@@ -97,7 +107,7 @@ void sauvegarderFilms(const char *nomFichier, Film *films, int nbFilms) {
 }
 
 /* =========================================================
- * SECTION 2 — FONCTIONS OBLIGATOIRES (Personne A)
+ * SECTION 2 — FONCTIONS fait par Ahmadoul Khadimou GUEYE
  * ========================================================= */
 
 /*
@@ -229,7 +239,7 @@ void afficherParGenre(Film *films, int nbFilms, const char *genre) {
 }
 
 /* =========================================================
- * SECTION 3 — FONCTIONS OBLIGATOIRES (Personne B)
+ * SECTION 3 — FONCTIONS Fait par Abdou Aziz SAMB
  * ========================================================= */
 
 /*
@@ -255,13 +265,13 @@ void ajouterFilm(const char *nomFichier) {
 
     printf("\n--- Ajouter un film ---\n");
 
-    /* vider le buffer clavier avant getchar/fgets */
+    /* Je vide le buffer clavier avant getchar/fgets */
     int c;
     while ((c = getchar()) != '\n' && c != EOF);
 
     printf("Titre  : ");
     fgets(nouveau.titre, sizeof(nouveau.titre), stdin);
-    nouveau.titre[strcspn(nouveau.titre, "\n")] = '\0'; /* supprimer le '\n' final */
+    nouveau.titre[strcspn(nouveau.titre, "\n")] = '\0'; /* supprime le '\n' final */
 
     printf("Genre  : ");
     fgets(nouveau.genre, sizeof(nouveau.genre), stdin);
@@ -277,7 +287,7 @@ void ajouterFilm(const char *nomFichier) {
     if (nouveau.note < 0.0f) nouveau.note = 0.0f;
     if (nouveau.note > 10.0f) nouveau.note = 10.0f;
 
-    /* agrandir le tableau et ajouter le nouveau film */
+    /* J'agrandi le tableau et j'ajoute le nouveau film */
     films = realloc(films, (nbFilms + 1) * sizeof(Film));
     if (films == NULL) {
         fprintf(stderr, "Erreur : allocation mémoire impossible.\n");
@@ -385,7 +395,7 @@ void supprimerFilm(const char *nomFichier, int id) {
     /*
      * Décaler tous les films suivants d'une position vers la gauche
      * pour "écraser" le film supprimé.
-     * Exemple : [A, B, C, D] → supprimer B → [A, C, D]
+     * Exemple : [A, B, C, D] → Si on supprime B Cela donne → [A, C, D]
      */
     for (int i = idx; i < nbFilms - 1; i++) {
         films[i] = films[i + 1];
@@ -401,6 +411,7 @@ void supprimerFilm(const char *nomFichier, int id) {
  * SECTION 4 — FONCTIONNALITÉS BONUS
  * ========================================================= */
 
+/*Fait par Abdou Aziz SAMB*/
 /*
  * trierParNoteDecroissante
  * Tri à bulles : du film le mieux noté au moins bien noté.
@@ -422,6 +433,7 @@ void trierParNoteDecroissante(Film *films, int nbFilms) {
 
 /* --------------------------------------------------------- */
 
+/* Fait par Abdou Aziz SAMB*/
 /*
  * trierAlphabetique
  * Tri à bulles : ordre alphabétique du titre (insensible à la casse).
@@ -442,6 +454,7 @@ void trierAlphabetique(Film *films, int nbFilms) {
 
 /* --------------------------------------------------------- */
 
+/* Fait par Abdou Aziz SAMB*/
 /*
  * afficherTop5
  * Affiche les 5 films les mieux notés.
@@ -483,6 +496,7 @@ void afficherTop5(Film *films, int nbFilms) {
 
 /* --------------------------------------------------------- */
 
+/* Fait par Ahmadoul Khadim GUEYE */
 /*
  * afficherStatistiques
  * Affiche un résumé complet du catalogue.
@@ -520,7 +534,7 @@ void afficherStatistiques(Film *films, int nbFilms) {
      * a déjà été compté. Si non, on compte combien de films
      * partagent ce genre et on l'affiche.
      */
-    int deja_compte[200] = {0}; /* tableau de "drapeaux" pour éviter les doublons */
+    int deja_compte[200] = {0}; /*Ce tableau nous sert pour éviter les doublons */
 
     for (int i = 0; i < nbFilms; i++) {
         if (deja_compte[i]) continue; /* genre déjà traité */

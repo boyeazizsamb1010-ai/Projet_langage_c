@@ -6,7 +6,6 @@
 
 #define NOM_FICHIER "catalogue.csv"
 
-/* --------------------------------------------------------- */
 
 /* afficherMenu : affiche le menu textuel */
 void afficherMenu() {
@@ -31,7 +30,6 @@ void afficherMenu() {
     printf("Votre choix : ");
 }
 
-/* --------------------------------------------------------- */
 
 int main() {
 
