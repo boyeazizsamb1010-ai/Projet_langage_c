@@ -28,22 +28,22 @@
 28;Her;Science-Fiction;2013;8.0
 29;Inside Out;Animation;2015;8.1
 30;Princess Mononoke;Fantasy ;1997;8.3
-31;Akira;Science Fiction;1988;8.0
+31;Akira;Science-Fiction;1988;8.0
 32;Oppenheimer;Biopic;2023;8.2
-33;The End of Evangelion;Science Fiction;1997;8.1
-34;The Punisher;Action ;2004;6.4
+33;The End of Evangelion;Science-Fiction;1997;8.1
+34;The Punisher;Action;2004;6.4
 35;Breaking Bad : El Camino;Crime;2019;7.3
 36;Braveheart;Guerre;1995;8.3
 37;The Woman King;Action;2022;6.9
 38;Kirikou et la Sorcière;Fantasy;1998;7.5
 39;Un Prince a New York;Comedie;1988;7.1
-40;The Game ;Enigme;1997;7.7
+40;The Game;Enigme;1997;7.7
 41;Black Mic-Mac;Comedie;1986;5.3
 42;Le jeu de la mort;Action;1978;5.9
 43;Chainsaw Man : Reze Arc;Action;2025;8.3
-44;Major Payne ;Comedie ;1995;6.3
-45;Ghost Rider;Action ;2007;5.3
-46;Michael;Biopic ;2026;7.5
+44;Major Payne;Comedie;1995;6.3
+45;Ghost Rider;Action;2007;5.3
+46;Michael;Biopic;2026;7.5
 47;Ghost;Romance;1990;7.1
 48;Five Nights at Freddy's;Horreur;2023;5.4
 49;Une si longue lettre;Drame;2025;3.1
@@ -53,7 +53,7 @@
 53;Backrooms;Horreur;2026;7.1
 54;Le Voyage de Chihiro;Fantasy;2001;8.6
 55;Tokyo Godfathers;Comedie;2003;7.8
-56;Paprika;Science Fiction;2006;7.6
+56;Paprika;Science-Fiction;2006;7.6
 57;Perfect Blue;Horreur;1997;8.0
 58;American Psycho;Horreur;2000;7.6
 59;Conjuring 2;Horreur;2016;7.3
@@ -61,5 +61,5 @@
 61;Azur et Asmar;Fantasy;2006;7.3
 62;Prince opt;Enfants;1998;7.2
 63;Ma vie de Courgette;Enfants;2016;7.8
-64;Promare;Science Fiction;2019;7.0
-65;Maze Runner;Science Fiction ;2014;6.8
+64;Promare;Science-Fiction;2019;7.0
+65;Maze Runner;Science-Fiction;2014;6.8
